@@ -1,6 +1,5 @@
 from itertools import combinations
 
-
 def peterson():
     V = list(range(10))
     A = [(0, 1), (0, 4), (0, 7), (1, 5), (1, 2), (2, 3), (2, 9), (3, 4), (3, 6), (4, 8), (5, 6), (5, 8), (6, 7), (7, 9),
@@ -25,8 +24,8 @@ def peterson():
 
 
 
-def SAT(n):
-    res = "c td2.2 \n"
+def Reine(n, comment="td"):
+    res = "c "+comment+" \n"
     n_equation = 0
 
     res_1 = ""
@@ -95,11 +94,35 @@ def SAT(n):
     return res
 
 
+
+
 if __name__ == "__main__":
-    peterson()
+    with open("td2.1.cnf", 'w', encoding='utf-8') as f:
+        f.write(peterson())
     # 120 solutions possibles
 
-    print(SAT(4))
+    with open("td2.2.cnf", 'w', encoding='utf-8') as f:
+        f.write(Reine(4, comment="td2.2"))
+
     # n=4 on a 2 solutions
-    # Exercice 2 :
-    # solution 2,4,1,3
+    # solution 2,4,1,3 (meilleure solution lexicographiquement)
+    # solutions
+    # Sommet 0 : R
+    # Sommet 1 : V
+    # Sommet 2 : R
+    # Sommet 3 : V
+    # Sommet 4 : B
+    # Sommet 5 : R
+    # Sommet 6 : B
+    # Sommet 7 : V
+    # Sommet 8 : V
+    # Sommet 9 : B
+
+    with open("td2.3.1.1.cnf", 'w', encoding='utf-8') as f:
+        f.write(Reine(10,comment="td2.3.1 10 reines"))
+    # with SAT (scip 3482 feasible solutions) ~30s
+    with open("td2.3.2.1.cnf", 'w', encoding='utf-8') as f:
+        f.write(Reine(20,comment="td2.3.2 20 reines"))
+
+
+
