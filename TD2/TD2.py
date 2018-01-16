@@ -121,6 +121,7 @@ if __name__ == "__main__":
     with open("td2.3.1.1.cnf", 'w', encoding='utf-8') as f:
         f.write(Reine(10,comment="td2.3.1 10 reines"))
     # with SAT (scip 3482 feasible solutions) ~30s
+    # with ZIMPL (scip
     with open("td2.3.2.1.cnf", 'w', encoding='utf-8') as f:
         f.write(Reine(20,comment="td2.3.2 20 reines"))
 

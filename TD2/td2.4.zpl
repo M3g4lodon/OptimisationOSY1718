@@ -1,6 +1,8 @@
 param n := 20;
 
+
 var Q[{1 .. n}] integer >=1 <=n;
+minimize dist_lexic
 
 subto ReinesCloitree:
 forall <i> in {1..n-1}:
